@@ -4,4 +4,4 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-app.Run();
+app.Run(); // Start the application and listen for incoming HTTP requests.

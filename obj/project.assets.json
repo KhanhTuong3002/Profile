@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\Profile\\Profile.csproj",
+      "projectUniqueName": "D:\\NewProject\\Profile\\Profile.csproj",
       "projectName": "Profile",
-      "projectPath": "D:\\Project\\Profile\\Profile.csproj",
+      "projectPath": "D:\\NewProject\\Profile\\Profile.csproj",
       "packagesPath": "C:\\Users\\Khanh Tuong\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\Profile\\obj\\",
+      "outputPath": "D:\\NewProject\\Profile\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 24.2\\Components\\Offline Packages",
