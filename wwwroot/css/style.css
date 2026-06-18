@@ -86,16 +86,16 @@ svg circle[stroke-dasharray] {
 }
 
 ::-webkit-scrollbar-track {
-    background: #181b22;
+    background: #1d0407;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #2b303c;
+    background: #340f12;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #404758;
+    background: #5c2a2f;
 }
 
 /* Responsive adjustments for orbits and background circles */
