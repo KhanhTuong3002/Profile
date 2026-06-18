@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy Developer - Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#181b22',
+                        darkcard: '#1e222b',
+                        graytext: '#9ba4b4',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-darkbg text-white font-sans min-h-screen relative overflow-x-hidden flex flex-col justify-between selection:bg-white selection:text-darkbg">
+
+    <!-- Top-Left Background Decorative Circles -->
+    <div
+        class="absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] border border-gray-800/20 rounded-full pointer-events-none z-0">
+    </div>
+    <div
+        class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-[450px] h-[450px] border border-gray-800/15 rounded-full pointer-events-none z-0">
+    </div>
+    <div
+        class="absolute top-0 left-0 -translate-x-1/5 -translate-y-1/5 w-[300px] h-[300px] border border-gray-800/10 rounded-full pointer-events-none z-0">
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="w-full py-6 px-6 lg:px-16 relative z-50 flex items-center justify-between max-w-7xl mx-auto">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+            <div
+                class="w-10 h-10 bg-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-6">
+                <svg class="w-8 h-8" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Left Ear -->
+                    <circle cx="50" cy="50" r="30" fill="#78513d" />
+                    <circle cx="50" cy="50" r="18" fill="#b99881" />
+                    <!-- Right Ear -->
+                    <circle cx="150" cy="50" r="30" fill="#78513d" />
+                    <circle cx="150" cy="50" r="18" fill="#b99881" />
+                    <!-- Head -->
+                    <ellipse cx="100" cy="115" rx="75" ry="68" fill="#78513d" />
+                    <!-- Eyes -->
+                    <circle cx="72" cy="100" r="11" fill="#1b1c1e" />
+                    <circle cx="128" cy="100" r="11" fill="#1b1c1e" />
+                    <!-- Snout -->
+                    <ellipse cx="100" cy="130" rx="30" ry="24" fill="#fca95c" />
+                    <!-- Nose -->
+                    <ellipse cx="100" cy="120" rx="14" ry="9" fill="#1b1c1e" />
+                    <!-- Smile -->
+                    <path d="M 88 138 A 12 12 0 0 0 112 138" stroke="#1b1c1e" stroke-width="5" stroke-linecap="round"
+                        fill="none" />
+                </svg>
+            </div>
+            <span
+                class="text-2xl font-semibold tracking-wide font-sans group-hover:text-gray-300 transition-colors">Teddy
+                Dev</span>
+        </a>
+
+        <!-- Menu Navigation -->
+        <nav class="hidden md:flex items-center gap-8 lg:gap-12">
+            <a href="#home"
+                class="nav-link text-white hover:text-white transition-colors duration-300 text-sm font-semibold tracking-wider uppercase relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-white after:rounded">Home</a>
+            <a href="#service"
+                class="nav-link text-graytext hover:text-white transition-colors duration-300 text-sm font-semibold tracking-wider uppercase">Service</a>
+            <a href="#blog"
+                class="nav-link text-graytext hover:text-white transition-colors duration-300 text-sm font-semibold tracking-wider uppercase">Blog</a>
+            <a href="#about"
+                class="nav-link text-graytext hover:text-white transition-colors duration-300 text-sm font-semibold tracking-wider uppercase">About</a>
+            <a href="#contact"
+                class="nav-link text-graytext hover:text-white transition-colors duration-300 text-sm font-semibold tracking-wider uppercase">Contact</a>
+        </nav>
+
+        <!-- Action Button -->
+        <a href="#contact"
+            class="border border-gray-600/40 hover:border-white hover:bg-white hover:text-darkbg text-white px-6 py-2.5 rounded-full text-sm font-semibold tracking-wider transition-all duration-300 flex items-center gap-2 group">
+            <span>Hire Me</span>
+            <i class="fa-solid fa-angles-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+        </a>
+    </header>
+
+    <!-- Hero Section Content -->
+    <main id="home" class="w-full flex flex-col items-center relative z-20 max-w-7xl mx-auto px-6 lg:px-16 pt-12 pb-24">
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[70vh]">
+
+            <!-- Left Info Panel -->
+            <div class="lg:col-span-7 flex flex-col justify-center text-left relative z-30">
+                <span
+                    class="text-white text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-2 tracking-wide leading-tight animate-fade-in">Hello!
+                    I'm</span>
+                <div class="relative inline-block max-w-max mb-6">
+                    <h1
+                        class="text-white text-5xl sm:text-7xl lg:text-8xl font-serif font-medium tracking-wide leading-none py-1">
+                        Mirta Akins
+                    </h1>
+                    <!-- Wavy underline decoration -->
+                    <div class="absolute left-0 bottom-[-15px] w-full text-gray-500/40 pointer-events-none select-none">
+                        <svg class="w-full h-4" viewBox="0 0 350 20" fill="none" stroke="currentColor" stroke-width="4"
+                            stroke-linecap="round">
+                            <path d="M 5 12 C 40 2, 80 2, 120 12 C 160 22, 200 22, 240 12 C 280 2, 320 2, 345 12" />
+                            <path d="M 5 18 C 40 8, 80 8, 120 18 C 160 28, 200 28, 240 18 C 280 8, 320 8, 345 18"
+                                opacity="0.6" />
+                        </svg>
+                    </div>
+                </div>
+
+                <p
+                    class="text-graytext text-base sm:text-lg lg:text-xl font-light mt-8 mb-12 max-w-md leading-relaxed font-sans">
+                    UI/UX Designer specializing in Shopify & Webflow.
+                </p>
+
+                <!-- Actions Row -->
+                <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start sm:items-center">
+                    <!-- Get Resume Pill Button -->
+                    <a href="#"
+                        class="border border-gray-600/40 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-3 group hover:bg-white hover:text-darkbg shadow-lg hover:shadow-white/10">
+                        <span>Get Resume</span>
+                        <i
+                            class="fa-solid fa-download text-sm transition-transform duration-300 group-hover:translate-y-0.5"></i>
+                    </a>
+
+                    <!-- Play Video Interactive Button -->
+                    <div class="flex items-center gap-4 cursor-pointer group" id="watchVideoBtn">
+                        <div
+                            class="relative w-14 h-14 rounded-full flex items-center justify-center border border-gray-600/40 text-white transition-all duration-300 group-hover:border-white group-hover:scale-105 bg-darkcard/50">
+                            <div
+                                class="absolute inset-0 rounded-full border border-white/20 animate-ping opacity-0 group-hover:opacity-100">
+                            </div>
+                            <div
+                                class="play-pulse-ring-1 absolute -inset-2 rounded-full border border-white/5 pointer-events-none">
+                            </div>
+                            <div
+                                class="play-pulse-ring-2 absolute -inset-4 rounded-full border border-white/3 pointer-events-none">
+                            </div>
+
+                            <i
+                                class="fa-solid fa-play text-sm ml-1 transition-transform duration-300 group-hover:scale-110"></i>
+                        </div>
+                        <span
+                            class="text-graytext group-hover:text-white transition-all duration-300 font-semibold text-sm tracking-wider uppercase">Watch
+                            Video</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Portrait and Orbit Panel -->
+            <div
+                class="lg:col-span-5 flex justify-center items-end relative min-h-[400px] sm:min-h-[500px] lg:h-[600px] w-full mt-8 lg:mt-0">
+                <!-- Outer Concentric Orbit lines centered around the portrait -->
+                <div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-visible">
+                    <svg id="orbitLines"
+                        class="w-[140%] h-[140%] md:w-[120%] md:h-[120%] lg:w-[150%] lg:h-[150%] absolute text-gray-800/25"
+                        viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1">
+                        <!-- Orbit 1 (Inner) -->
+                        <circle cx="400" cy="450" r="220" stroke-dasharray="2 4" />
+                        <!-- Orbit 2 (Middle) -->
+                        <circle cx="400" cy="450" r="300" />
+                        <!-- Orbit 3 (Outer) -->
+                        <circle cx="400" cy="450" r="380" />
+                    </svg>
+                </div>
+
+                <!-- Portrait Image -->
+                <div
+                    class="relative z-10 w-full max-w-[350px] sm:max-w-[400px] lg:max-w-full lg:w-11/12 h-auto flex items-end">
+                    <img src="assets/profile (2).png" alt="Mirta Akins Portrait"
+                        class="w-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                </div>
+
+                <!-- Social Icons orbiting on the right -->
+                <div
+                    class="absolute right-0 top-0 h-full w-full pointer-events-none z-20 flex flex-col justify-around items-end select-none">
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                        class="pointer-events-auto absolute w-12 h-12 bg-darkbg hover:bg-white hover:text-darkbg border border-gray-600/30 hover:border-white rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg top-[18%] right-[16%] lg:right-[18%] xl:right-[22%] group"
+                        title="Facebook">
+                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
+
+                    <!-- Globe / Portfolio -->
+                    <a href="#"
+                        class="pointer-events-auto absolute w-12 h-12 bg-darkbg hover:bg-white hover:text-darkbg border border-gray-600/30 hover:border-white rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg top-[38%] right-[2%] lg:right-[4%] xl:right-[6%] group"
+                        title="Website">
+                        <i class="fa-solid fa-globe text-sm"></i>
+                    </a>
+
+                    <!-- Behance -->
+                    <a href="https://behance.net" target="_blank" rel="noopener noreferrer"
+                        class="pointer-events-auto absolute w-12 h-12 bg-darkbg hover:bg-white hover:text-darkbg border border-gray-600/30 hover:border-white rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg top-[60%] right-[2%] lg:right-[4%] xl:right-[6%] group"
+                        title="Behance">
+                        <i class="fa-brands fa-behance text-sm font-semibold"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                        class="pointer-events-auto absolute w-12 h-12 bg-darkbg hover:bg-white hover:text-darkbg border border-gray-600/30 hover:border-white rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg top-[80%] right-[16%] lg:right-[18%] xl:right-[22%] group"
+                        title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Services Section -->
+    <section id="service" class="w-full bg-darkcard/30 border-y border-gray-800/30 py-24 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm text-graytext font-semibold uppercase tracking-widest">What I Offer</span>
+                <h2 class="text-4xl lg:text-5xl font-serif font-medium mt-3 text-white">Specialized Services</h2>
+                <div class="w-16 h-[2px] bg-white mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="bg-darkcard border border-gray-800/50 rounded-2xl p-8 hover:border-white/30 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
+                    <div
+                        class="w-14 h-14 bg-darkbg rounded-xl border border-gray-800 flex items-center justify-center text-white mb-6 group-hover:bg-white group-hover:text-darkbg transition-all duration-300">
+                        <i class="fa-solid fa-bezier-curve text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3">UI/UX Design</h3>
+                    <p class="text-graytext text-sm leading-relaxed">Crafting high-fidelity mockups, responsive layouts,
+                        and user-centric wireframes optimized for conversions.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="bg-darkcard border border-gray-800/50 rounded-2xl p-8 hover:border-white/30 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
+                    <div
+                        class="w-14 h-14 bg-darkbg rounded-xl border border-gray-800 flex items-center justify-center text-white mb-6 group-hover:bg-white group-hover:text-darkbg transition-all duration-300">
+                        <i class="fa-brands fa-shopify text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3">Shopify E-Commerce</h3>
+                    <p class="text-graytext text-sm leading-relaxed">Developing tailored online storefronts with rich,
+                        responsive themes, customized checkouts, and clean UX flows.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="bg-darkcard border border-gray-800/50 rounded-2xl p-8 hover:border-white/30 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
+                    <div
+                        class="w-14 h-14 bg-darkbg rounded-xl border border-gray-800 flex items-center justify-center text-white mb-6 group-hover:bg-white group-hover:text-darkbg transition-all duration-300">
+                        <i class="fa-solid fa-laptop-code text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3">Webflow Customization</h3>
+                    <p class="text-graytext text-sm leading-relaxed">Building pixel-perfect websites from figma to
+                        functional Webflow platforms, utilizing clean code templates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="w-full py-24 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm text-graytext font-semibold uppercase tracking-widest">My Insights</span>
+                <h2 class="text-4xl lg:text-5xl font-serif font-medium mt-3 text-white">Latest Case Studies</h2>
+                <div class="w-16 h-[2px] bg-white mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog 1 -->
+                <article
+                    class="bg-darkcard/50 rounded-2xl overflow-hidden border border-gray-800/50 hover:border-gray-700/80 transition-all duration-300 group">
+                    <div
+                        class="h-48 bg-gradient-to-tr from-slate-900 to-slate-800 relative flex items-center justify-center p-6 text-center">
+                        <span
+                            class="text-4xl text-white/5 font-serif absolute inset-0 flex items-center justify-center select-none font-bold">CASE
+                            #1</span>
+                        <i
+                            class="fa-solid fa-bag-shopping text-4xl text-white/10 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-graytext uppercase font-semibold tracking-wider">Shopify • 5 min
+                            read</span>
+                        <h3
+                            class="text-lg font-serif font-medium mt-2 mb-3 text-white group-hover:text-gray-300 transition-colors">
+                            Maximizing Store Conversions with Shopify UI Optimizations</h3>
+                        <a href="#"
+                            class="text-sm text-white/80 hover:text-white font-semibold flex items-center gap-2 mt-4 group/btn">
+                            <span>Read Case Study</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover/btn:translate-x-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 2 -->
+                <article
+                    class="bg-darkcard/50 rounded-2xl overflow-hidden border border-gray-800/50 hover:border-gray-700/80 transition-all duration-300 group">
+                    <div
+                        class="h-48 bg-gradient-to-tr from-slate-900 to-slate-800 relative flex items-center justify-center p-6 text-center">
+                        <span
+                            class="text-4xl text-white/5 font-serif absolute inset-0 flex items-center justify-center select-none font-bold">CASE
+                            #2</span>
+                        <i
+                            class="fa-solid fa-wand-magic-sparkles text-4xl text-white/10 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-graytext uppercase font-semibold tracking-wider">Webflow • 4 min
+                            read</span>
+                        <h3
+                            class="text-lg font-serif font-medium mt-2 mb-3 text-white group-hover:text-gray-300 transition-colors">
+                            Structuring Motion and Interactions in Webflow Interfaces</h3>
+                        <a href="#"
+                            class="text-sm text-white/80 hover:text-white font-semibold flex items-center gap-2 mt-4 group/btn">
+                            <span>Read Case Study</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover/btn:translate-x-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 3 -->
+                <article
+                    class="bg-darkcard/50 rounded-2xl overflow-hidden border border-gray-800/50 hover:border-gray-700/80 transition-all duration-300 group">
+                    <div
+                        class="h-48 bg-gradient-to-tr from-slate-900 to-slate-800 relative flex items-center justify-center p-6 text-center">
+                        <span
+                            class="text-4xl text-white/5 font-serif absolute inset-0 flex items-center justify-center select-none font-bold">CASE
+                            #3</span>
+                        <i
+                            class="fa-solid fa-font text-4xl text-white/10 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-graytext uppercase font-semibold tracking-wider">Design System • 7 min
+                            read</span>
+                        <h3
+                            class="text-lg font-serif font-medium mt-2 mb-3 text-white group-hover:text-gray-300 transition-colors">
+                            Creating Harmonious Typography Systems for Web Layouts</h3>
+                        <a href="#"
+                            class="text-sm text-white/80 hover:text-white font-semibold flex items-center gap-2 mt-4 group/btn">
+                            <span>Read Case Study</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover/btn:translate-x-1"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="w-full bg-darkcard/30 border-y border-gray-800/30 py-24 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Details -->
+                <div>
+                    <span class="text-sm text-graytext font-semibold uppercase tracking-widest">About Me</span>
+                    <h2 class="text-4xl lg:text-5xl font-serif font-medium mt-3 mb-6 text-white text-left">Designing
+                        Experiences, Constructing Brands</h2>
+                    <p class="text-graytext text-base leading-relaxed mb-6 font-light">
+                        I am Mirta Akins, a creative designer based in San Francisco. With over 6 years of experience
+                        collaborating with e-commerce brands, startup founders, and design studios, I build web
+                        properties that perform as beautifully as they look.
+                    </p>
+                    <p class="text-graytext text-base leading-relaxed mb-8 font-light">
+                        By integrating deep Shopify theme infrastructure, Figma UX design protocols, and clean Webflow
+                        development, I help businesses bridge the gap between creative visual artistry and transactional
+                        web mechanics.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div>
+                            <span class="text-3xl font-serif font-medium text-white">40+</span>
+                            <p class="text-xs text-graytext uppercase tracking-wider mt-1">Projects Completed</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-serif font-medium text-white">6+</span>
+                            <p class="text-xs text-graytext uppercase tracking-wider mt-1">Years Experience</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-serif font-medium text-white">99%</span>
+                            <p class="text-xs text-graytext uppercase tracking-wider mt-1">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Graphic/Stat Box -->
+                <div class="flex justify-center lg:justify-end">
+                    <div
+                        class="bg-darkcard border border-gray-800 rounded-3xl p-8 w-full max-w-md relative overflow-hidden shadow-2xl">
+                        <div
+                            class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-40 h-40 bg-white/5 rounded-full blur-2xl">
+                        </div>
+                        <h3 class="text-xl font-serif font-medium mb-6 text-white">Workflow Stack</h3>
+
+                        <div class="space-y-6">
+                            <!-- Skill 1 -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-1.5">
+                                    <span class="font-semibold text-gray-300">Figma & UI Prototyping</span>
+                                    <span class="text-graytext">95%</span>
+                                </div>
+                                <div class="w-full bg-darkbg h-2 rounded-full overflow-hidden">
+                                    <div class="bg-white h-full w-[95%] rounded-full"></div>
+                                </div>
+                            </div>
+                            <!-- Skill 2 -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-1.5">
+                                    <span class="font-semibold text-gray-300">Webflow Engineering</span>
+                                    <span class="text-graytext">90%</span>
+                                </div>
+                                <div class="w-full bg-darkbg h-2 rounded-full overflow-hidden">
+                                    <div class="bg-white h-full w-[90%] rounded-full"></div>
+                                </div>
+                            </div>
+                            <!-- Skill 3 -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-1.5">
+                                    <span class="font-semibold text-gray-300">Shopify Development</span>
+                                    <span class="text-graytext">85%</span>
+                                </div>
+                                <div class="w-full bg-darkbg h-2 rounded-full overflow-hidden">
+                                    <div class="bg-white h-full w-[85%] rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="w-full py-24 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+
+                <!-- Contact info -->
+                <div class="lg:col-span-5">
+                    <span class="text-sm text-graytext font-semibold uppercase tracking-widest">Connect</span>
+                    <h2 class="text-4xl lg:text-5xl font-serif font-medium mt-3 mb-6 text-white text-left">Let's Create
+                        Something Great</h2>
+                    <p class="text-graytext text-base leading-relaxed mb-10 font-light">
+                        Have a design system that needs launching or a Shopify store that requires custom adjustments?
+                        Reach out using the form, or drop me a line directly.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-darkcard border border-gray-800 flex items-center justify-center text-white">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-graytext block uppercase tracking-wider">Email Me</span>
+                                <a href="mailto:hello@mirtaakins.design"
+                                    class="text-sm text-white hover:text-gray-300 font-semibold transition-colors">hello@mirtaakins.design</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-darkcard border border-gray-800 flex items-center justify-center text-white">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-graytext block uppercase tracking-wider">Call Me</span>
+                                <a href="tel:+14155552671"
+                                    class="text-sm text-white hover:text-gray-300 font-semibold transition-colors">+1
+                                    (415) 555-2671</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-darkcard border border-gray-800 flex items-center justify-center text-white">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-graytext block uppercase tracking-wider">Location</span>
+                                <span class="text-sm text-white font-semibold">San Francisco, CA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact form -->
+                <div
+                    class="lg:col-span-7 bg-darkcard border border-gray-800/80 rounded-3xl p-8 lg:p-12 shadow-2xl relative">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name"
+                                    class="text-xs text-graytext uppercase font-semibold tracking-wider">Full
+                                    Name</label>
+                                <input type="text" id="name" required
+                                    class="w-full bg-darkbg border border-gray-800 rounded-xl px-4 py-3.5 mt-2 text-white focus:outline-none focus:border-white transition-colors">
+                            </div>
+                            <div>
+                                <label for="email"
+                                    class="text-xs text-graytext uppercase font-semibold tracking-wider">Email
+                                    Address</label>
+                                <input type="email" id="email" required
+                                    class="w-full bg-darkbg border border-gray-800 rounded-xl px-4 py-3.5 mt-2 text-white focus:outline-none focus:border-white transition-colors">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject"
+                                class="text-xs text-graytext uppercase font-semibold tracking-wider">Subject</label>
+                            <input type="text" id="subject" required
+                                class="w-full bg-darkbg border border-gray-800 rounded-xl px-4 py-3.5 mt-2 text-white focus:outline-none focus:border-white transition-colors">
+                        </div>
+                        <div>
+                            <label for="message"
+                                class="text-xs text-graytext uppercase font-semibold tracking-wider">Your
+                                Message</label>
+                            <textarea id="message" rows="5" required
+                                class="w-full bg-darkbg border border-gray-800 rounded-xl px-4 py-3.5 mt-2 text-white focus:outline-none focus:border-white transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-white hover:bg-gray-200 text-darkbg py-4 rounded-xl font-bold tracking-wider uppercase transition-colors shadow-lg hover:shadow-white/5 flex items-center justify-center gap-2 group">
+                            <span>Send Message</span>
+                            <i
+                                class="fa-solid fa-paper-plane text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Alert Message (Hidden initially) -->
+                    <div id="formSuccess"
+                        class="absolute inset-0 bg-darkcard/95 rounded-3xl flex flex-col items-center justify-center p-8 opacity-0 pointer-events-none transition-opacity duration-300">
+                        <div
+                            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-darkbg text-2xl mb-4 shadow-lg animate-bounce">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-medium mb-2 text-white">Message Sent!</h3>
+                        <p class="text-graytext text-center max-w-sm mb-6">Thank you for reaching out. I'll read your
+                            message and reply within 24 hours.</p>
+                        <button type="button" id="formResetBtn"
+                            class="border border-gray-700 hover:border-white text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">Send
+                            another message</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer
+        class="w-full py-8 px-6 lg:px-16 relative z-50 flex items-center justify-between max-w-7xl mx-auto border-t border-gray-800/20">
+        <span class="text-xs text-gray-500 font-medium tracking-wide">&copy; 2026 Teddy Dev. Designed for UI/UX
+            Professional Portfolio.</span>
+
+        <!-- Floating Back to Top Button -->
+        <a href="#home" id="scrollTopBtn"
+            class="w-12 h-12 bg-darkcard border border-gray-700/50 text-graytext hover:text-white hover:border-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 group"
+            title="Back to top">
+            <i
+                class="fa-solid fa-chevron-up text-sm transition-transform duration-300 group-hover:-translate-y-0.5"></i>
+        </a>
+    </footer>
+
+    <!-- Video Modal (Hidden by Default) -->
+    <div id="videoModal"
+        class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute top-6 right-6 text-white text-3xl cursor-pointer hover:text-gray-400 transition-colors"
+            id="closeModalBtn">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div
+            class="w-11/12 max-w-4xl aspect-video bg-darkcard rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+            <!-- Simulated premium portfolio video display -->
+            <div class="w-full h-full flex flex-col items-center justify-center p-8 relative">
+                <i class="fa-solid fa-film text-6xl text-white/20 mb-4 animate-pulse"></i>
+                <h3 class="text-2xl font-serif font-medium mb-2">Mirta Akins Portfolio Overview</h3>
+                <p class="text-graytext text-sm mb-6 text-center max-w-md">This modal simulates playing a premium
+                    presentation or introduction video showcasing Shopify and Webflow designs.</p>
+                <button id="closeModalInnerBtn"
+                    class="bg-white text-darkbg hover:bg-gray-200 transition-colors px-6 py-2.5 rounded-full text-sm font-semibold">Close
+                    Preview</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
