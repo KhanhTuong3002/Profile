@@ -2,25 +2,72 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
-    // 1. Video Modal Controls
+    // 1. Video Modal Controls (Simulated & Real HTML5 Video Player)
     // ----------------------------------------------------
     const watchVideoBtn = document.getElementById('watchVideoBtn');
     const videoModal = document.getElementById('videoModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const closeModalInnerBtn = document.getElementById('closeModalInnerBtn');
 
-    const openModal = () => {
-        videoModal.classList.remove('pointer-events-none');
-        videoModal.classList.add('opacity-100');
+    // Video Player DOM elements
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    const modalSimulatedContainer = document.getElementById('modalSimulatedContainer');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalVideoSource = document.getElementById('modalVideoSource');
+
+    const openModalWithVideo = (videoPath) => {
+        if (modalVideo && modalVideoContainer && modalSimulatedContainer && videoModal) {
+            // Set source directly on the video element
+            modalVideo.src = videoPath;
+            modalVideo.load();
+            
+            // Hide simulated container, show video container
+            modalSimulatedContainer.classList.add('hidden');
+            modalVideoContainer.classList.remove('hidden');
+            
+            // Show modal and play
+            videoModal.classList.remove('pointer-events-none');
+            videoModal.classList.add('opacity-100');
+            
+            modalVideo.play().catch(err => {
+                console.log("Auto-play was prevented by browser: ", err);
+            });
+        }
+    };
+
+    const openModalSimulated = () => {
+        if (modalVideo && modalVideoContainer && modalSimulatedContainer && videoModal) {
+            // Pause and clear video
+            modalVideo.pause();
+            modalVideo.removeAttribute('src');
+            modalVideo.load();
+            
+            // Show simulated container, hide video container
+            modalVideoContainer.classList.add('hidden');
+            modalSimulatedContainer.classList.remove('hidden');
+            
+            // Show modal
+            videoModal.classList.remove('pointer-events-none');
+            videoModal.classList.add('opacity-100');
+        }
     };
 
     const closeModal = () => {
-        videoModal.classList.add('pointer-events-none');
-        videoModal.classList.remove('opacity-100');
+        if (videoModal) {
+            videoModal.classList.add('pointer-events-none');
+            videoModal.classList.remove('opacity-100');
+        }
+        if (modalVideo) {
+            modalVideo.pause();
+            // Reset source to release browser resources and stop audio
+            modalVideo.removeAttribute('src');
+            modalVideo.load();
+        }
     };
 
+
     if (watchVideoBtn && videoModal) {
-        watchVideoBtn.addEventListener('click', openModal);
+        watchVideoBtn.addEventListener('click', openModalSimulated);
     }
 
     if (closeModalBtn) {
