@@ -1,0 +1,9 @@
+wwwroot\js\script.js
+wwwroot\index.html
+wwwroot\css\style.css
+wwwroot\assets\profile.png
+wwwroot\assets\profile (2).PNG
+wwwroot\assets\Resume\Khanh_Tuong CV.pdf
+D:\NewProject\Profile\wwwroot\js\script.js
+D:\NewProject\Profile\wwwroot\css\style.css
+D:\NewProject\Profile\wwwroot\index.html
